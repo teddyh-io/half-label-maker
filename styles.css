@@ -1,0 +1,96 @@
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --brand: #ec4899; /* pink-500 */
+  --brand-700: #db2777; /* pink-600 */
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h1 { font-size: 1.8rem; margin: 0 0 8px; }
+.subtitle { color: var(--muted); margin: 0 0 20px; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.field { margin-bottom: 16px; }
+label { display: block; font-weight: 600; margin-bottom: 8px; }
+input[type="file"] { width: 100%; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 6px 0 10px;
+}
+.checkbox { display: flex; align-items: center; gap: 10px; color: var(--muted); }
+.checkbox input { width: 18px; height: 18px; }
+
+.actions { display: flex; gap: 12px; align-items: center; }
+.button, button {
+  appearance: none;
+  border: none;
+  background: var(--brand);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.button:hover, button:hover { background: var(--brand-700); }
+.button.secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
+button[disabled] { opacity: .5; cursor: not-allowed; }
+
+.preview { margin-top: 20px; }
+.preview h2 { margin-top: 0; font-size: 1.1rem; color: var(--muted); }
+.preview iframe { width: 100%; min-height: 70vh; border: 1px solid var(--border); background: white; border-radius: 8px; }
+
+footer { color: var(--muted); margin-top: 20px; }
+footer a { color: var(--brand); text-decoration: none; }
+footer a:hover { color: var(--brand-700); }
+
+/* Toast */
+.toast {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: #111827;
+  color: #f9fafb;
+  padding: 10px 1em;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 9999;
+  font-size: 1.5em;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+

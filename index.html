@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Half-Split Label PDF Converter</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Printable Label File Generator</h1>
+      <p class="subtitle">For Tally by Toad :)</p>
+
+      <form id="convert-form" class="card" onsubmit="return false;">
+        <div class="field">
+          <label for="file">Input PDF</label>
+          <input id="file" type="file" accept="application/pdf" />
+        </div>
+
+        <div class="grid">
+          <label class="checkbox">
+            <input id="autoRotate" type="checkbox" checked />
+            <span>Auto‑rotate for best fit</span>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="convertBtn" type="button" disabled>Convert to Half‑Letter</button>
+          <a id="downloadLink" class="button secondary" download="label-half-letter.pdf" hidden>Download PDF</a>
+        </div>
+      </form>
+
+      <div id="toast" class="toast" role="status" aria-live="polite">Generated! Congrats on the sale bun!</div>
+
+      <section id="previewSection" class="preview card" hidden>
+        <h2>Preview</h2>
+        <iframe id="previewFrame" title="Preview" loading="lazy"></iframe>
+      </section>
+
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
+
