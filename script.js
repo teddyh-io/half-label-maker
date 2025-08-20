@@ -40,7 +40,7 @@
       previewFrame.src = url + '#view=FitH';
 
       // Auto-download
-      setTimeout(() => downloadLink.click(), 10);
+      setTimeout(() => downloadLink.click(), 1000);
       setTimeout(() => URL.revokeObjectURL(url), 15000);
 
       showToast('Generated! Congrats on the sale bun!');
